@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<title>ORBIT — Search beyond</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#101622;--panel2:#151e2d;--text:#edf3ff;--muted:#91a0b8;--line:#273248;--accent:#8b7cff;--accent2:#54e0c0;--shadow:0 24px 80px #0007}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#29245a 0,transparent 45%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:22px 24px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:800;letter-spacing:.12em}.logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#091018;font-weight:950;box-shadow:0 0 30px #8b7cff44}.topright{display:flex;gap:9px;align-items:center}.pill{border:1px solid var(--line);background:#101622;color:var(--muted);padding:8px 12px;border-radius:999px;font-size:12px}.hero{text-align:center;padding:82px 0 32px}.eyebrow{color:var(--accent2);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.03;letter-spacing:-.06em;margin:14px 0}.hero h1 span{background:linear-gradient(100deg,#fff 15%,#b9b0ff 54%,#6de9ce);background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:16px;margin:0 auto;max-width:610px}.searchbox{max-width:820px;margin:28px auto 0;padding:8px;border:1px solid #46516c;background:#0e1420;border-radius:20px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow),0 0 0 5px #8b7cff0b}.searchicon{padding-left:12px;color:#9ea9c0;font-size:21px}.searchbox input{background:transparent;border:0;outline:0;color:var(--text);min-width:0;flex:1;padding:13px 0;font-size:16px}.searchbox input::placeholder{color:#69778f}.searchbox button,.primary{border:0;border-radius:13px;background:linear-gradient(135deg,#9c8dff,#6cdaef);color:#0a1020;font-weight:800;padding:13px 20px}.hint{font-size:12px;color:var(--muted);margin:12px 0 0}.kbd{border:1px solid #354158;border-radius:5px;padding:1px 6px;color:#b8c4d9;font-size:11px}.engines{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px 0}.engine{display:flex;gap:8px;align-items:center;border:1px solid var(--line);background:#101622;padding:10px 14px;border-radius:12px;color:#d8e0f0}.engine input{accent-color:var(--accent)}.dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);display:inline-block}.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:34px}.feature{padding:20px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#121a28dd,#0d121cdd)}.feature .ico{width:36px;height:36px;border-radius:11px;background:#8b7cff1b;color:#b5aaff;display:grid;place-items:center;font-size:18px}.feature h3{margin:14px 0 5px;font-size:15px}.feature p{color:var(--muted);font-size:13px;margin:0}.section{margin-top:32px;border:1px solid var(--line);border-radius:18px;background:#0e1420;padding:20px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.sectionhead h2{font-size:15px;margin:0}.sub{font-size:12px;color:var(--muted)}.advanced{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:6px}.field input,.field select{width:100%;border:1px solid #2b3850;background:#0a101a;color:var(--text);border-radius:10px;padding:10px 11px;outline:none}.field input:focus,.field select:focus{border-color:var(--accent)}.rowactions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.secondary{border:1px solid #334058;background:#151e2d;color:#e2e9f8;border-radius:10px;padding:10px 13px}.savedlist{display:flex;flex-wrap:wrap;gap:8px}.saved{border:1px solid #2c3850;border-radius:9px;padding:7px 10px;color:#cbd5e8;background:#121a27;font-size:12px;display:flex;gap:8px;align-items:center}.saved button{background:none;border:0;color:#91a0b8;padding:0}.historyempty{font-size:13px;color:var(--muted)}.footer{margin-top:34px;text-align:center;color:#65728a;font-size:12px}.notice{display:none;margin:14px auto 0;max-width:820px;padding:12px 14px;border:1px solid #655b9b;background:#19172c;border-radius:12px;color:#d9d4ff;font-size:13px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#e7eaff;color:#111827;padding:10px 16px;border-radius:10px;box-shadow:var(--shadow);display:none;z-index:5;font-size:13px}.light{--bg:#f4f6fb;--panel:#fff;--panel2:#eaf0f8;--text:#12192a;--muted:#59667c;--line:#d6deeb;--shadow:0 20px 60px #273a6018;background:radial-gradient(ellipse at 50% -20%,#dcd8ff 0,transparent 48%),var(--bg)}.light .searchbox,.light .section,.light .feature{background:#ffffffd9}.light .engine,.light .pill,.light .saved,.light .secondary{background:#fff;color:#273248}.light .field input,.light .field select{background:#fff;color:#12192a}.light .logo{color:#fff}.light .notice{background:#f0edff;color:#41377e}.light .searchbox input{color:#12192a}
+@media(max-width:760px){.hero{padding-top:58px}.grid{grid-template-columns:1fr}.advanced{grid-template-columns:1fr 1fr}.searchbox{border-radius:16px}.searchbox button{padding:12px 13px}.wrap{padding-left:16px;padding-right:16px}}@media(max-width:440px){.advanced{grid-template-columns:1fr}.topright .pill{display:none}.hero h1{font-size:45px}.searchbox{gap:5px}.searchbox input{font-size:14px}.searchbox button{font-size:13px;padding:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="logo">O</div> ORBIT <span style="font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.08em">SEARCH</span></div>
+  <div class="topright"><span class="pill">MULTI-ENGINE SEARCH</span><button class="secondary" id="themeBtn" aria-label="Toggle theme">☼ Theme</button></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">One query. A wider universe.</div>
+    <h1>Search <span>beyond.</span></h1>
+    <p>A smarter search workspace that sends your query to multiple engines, builds precise searches, and keeps your research organized.</p>
+    <form class="searchbox" id="searchForm">
+      <span class="searchicon">⌕</span>
+      <input id="query" aria-label="Search the web" placeholder="What do you want to discover?" autocomplete="off" required>
+      <button type="submit">Search ↗</button>
+    </form>
+    <div class="hint">Press <span class="kbd">Enter</span> to search · <span class="kbd">Ctrl</span> + <span class="kbd">K</span> to focus</div>
+    <div class="engines" aria-label="Search engines">
+      <label class="engine"><input type="checkbox" id="google" checked><span class="dot"></span> Google</label>
+      <label class="engine"><input type="checkbox" id="yahoo" checked><span class="dot" style="background:#a88bff"></span> Yahoo</label>
+      <label class="engine"><input type="checkbox" id="bing" checked><span class="dot" style="background:#54a8ff"></span> Bing</label>
+      <label class="engine"><input type="checkbox" id="ddg"><span class="dot" style="background:#ffb45d"></span> DuckDuckGo</label>
+    </div>
+    <div class="notice" id="notice" role="status"></div>
+  </section>
+
+  <section class="grid" aria-label="Features">
+    <article class="feature"><div class="ico">⌘</div><h3>Multi-engine launch</h3><p>Run the same query across Google, Yahoo, Bing, and DuckDuckGo in separate tabs.</p></article>
+    <article class="feature"><div class="ico">⚙</div><h3>Precision operators</h3><p>Build searches with exact phrases, excluded terms, site filters, file types, and date ranges.</p></article>
+    <article class="feature"><div class="ico">◷</div><h3>Your research hub</h3><p>Keep recent queries and save useful searches in this browser, without an account.</p></article>
+  </section>
+
+  <section class="section">
+    <div class="sectionhead"><h2>Advanced search builder</h2><span class="sub">Compose a focused query</span></div>
+    <div class="advanced">
+      <div class="field"><label for="exact">Exact phrase</label><input id="exact" placeholder='"climate change"'></div>
+      <div class="field"><label for="exclude">Exclude words</label><input id="exclude" placeholder="jobs, ads"></div>
+      <div class="field"><label for="site">Limit to website</label><input id="site" placeholder="example.com"></div>
+      <div class="field"><label for="filetype">File type</label><select id="filetype"><option value="">Any format</option><option>pdf</option><option>docx</option><option>pptx</option><option>xlsx</option><option>csv</option></select></div>
+      <div class="field"><label for="after">Published after</label><input id="after" type="date"></div>
+      <div class="field"><label for="before">Published before</label><input id="before" type="date"></div>
+      <div class="field"><label for="language">Search language</label><select id="language"><option value="">Any language</option><option value="lang_en">English</option><option value="lang_hi">Hindi</option><option value="lang_es">Spanish</option><option value="lang_fr">French</option></select></div>
+      <div class="field"><label for="safe">Safe search preference</label><select id="safe"><option value="moderate">Moderate</option><option value="strict">Strict</option><option value="off">Off</option></select></div>
+    </div>
+    <div class="rowactions"><button class="primary" id="applyAdvanced" type="button">Build & Search ↗</button><button class="secondary" id="buildOnly" type="button">Build query</button><button class="secondary" id="clearAdvanced" type="button">Clear filters</button></div>
+    <div class="sub" style="margin-top:12px">Query preview: <code id="preview">Your search query will appear here.</code></div>
+  </section>
+
+  <section class="section">
+    <div class="sectionhead"><h2>Saved searches</h2><span class="sub">Stored only in this browser</span></div>
+    <div id="savedList" class="savedlist"><span class="historyempty">No saved searches yet.</span></div>
+    <div class="rowactions"><button class="secondary" id="saveCurrent" type="button">＋ Save current query</button></div>
+  </section>
+  <section class="section">
+    <div class="sectionhead"><h2>Recent searches</h2><button class="secondary" id="clearHistory" type="button">Clear history</button></div>
+    <div id="historyList" class="savedlist"><span class="historyempty">Your recent searches will appear here.</span></div>
+  </section>
+</main>
+<footer class="footer">ORBIT is an independent search interface. Search results are provided by the selected engines.</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const STORAGE = {history:'orbit_history_v1',saved:'orbit_saved_v1',theme:'orbit_theme_v1'};
+  let currentQuery = '';
+  const engines = [
+    {id:'google', name:'Google', url:q=>'https://www.google.com/search?q='+encodeURIComponent(q)},
+    {id:'yahoo', name:'Yahoo', url:q=>'https://search.yahoo.com/search?p='+encodeURIComponent(q)},
+    {id:'bing', name:'Bing', url:q=>'https://www.bing.com/search?q='+encodeURIComponent(q)},
+    {id:'ddg', name:'DuckDuckGo', url:q=>'https://duckduckgo.com/?q='+encodeURIComponent(q)}
+  ];
+  function read(key, fallback=[]) {
+    try { const value=JSON.parse(localStorage.getItem(key) || 'null'); return Array.isArray(value)?value:fallback; }
+    catch { return fallback; }
+  }
+  function write(key,value) { try { localStorage.setItem(key,JSON.stringify(value)); } catch { toast('Browser storage is unavailable.'); } }
+  function toast(message) {
+    const el=$('toast'); el.textContent=message; el.style.display='block';
+    clearTimeout(toast.timer); toast.timer=setTimeout(()=>el.style.display='none',2600);
+  }
+  function safeText(value) { return String(value).replace(/[&<>"']/g, ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+  function buildQuery() {
+    const parts=[];
+    const base=$('query').value.trim();
+    if(base) parts.push(base);
+    const exact=$('exact').value.trim();
+    if(exact) parts.push('"'+exact.replace(/^["']|["']$/g,'')+'"');
+    const exclude=$('exclude').value.split(',').map(x=>x.trim()).filter(Boolean);
+    exclude.forEach(word=>parts.push('-'+word.replace(/^-/,'')));
+    const site=$('site').value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+    if(site && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(site)) parts.push('site:'+site);
+    else if(site) { toast('Enter a valid domain, such as example.com.'); return null; }
+    const type=$('filetype').value; if(type) parts.push('filetype:'+type);
+    const after=$('after').value; if(after) parts.push('after:'+after);
+    const before=$('before').value; if(before) parts.push('before:'+before);
+    return parts.join(' ').trim();
+  }
+  function selectedEngines() { return engines.filter(engine=>$(engine.id).checked); }
+  function search(query) {
+    const q=String(query||'').trim();
+    if(!q) { toast('Enter a search query first.'); $('query').focus(); return; }
+    const selected=selectedEngines();
+    if(!selected.length) { toast('Select at least one search engine.'); return; }
+    currentQuery=q; $('query').value=q; $('preview').textContent=q;
+    const history=read(STORAGE.history).filter(item=>item.query!==q);
+    history.unshift({query:q,time:Date.now()}); write(STORAGE.history,history.slice(0,12)); renderHistory();
+    $('notice').style.display='block';
+    $('notice').textContent='Opening '+selected.map(x=>x.name).join(', ')+'. Your browser may block multiple tabs; allow pop-ups for this page if needed.';
+    selected.forEach((engine,index)=> {
+      const url=engine.url(q);
+      if(index===0) window.open(url,'_blank','noopener,noreferrer');
+      else setTimeout(()=>window.open(url,'_blank','noopener,noreferrer'),180*index);
+    });
+  }
+  function renderHistory() {
+    const list=read(STORAGE.history); const el=$('historyList');
+    el.innerHTML=list.length?list.map(item=>`<span class="saved"><button data-run="${safeText(item.query)}" title="Search again">${safeText(item.query)}</button><button data-remove-history="${safeText(item.query)}" aria-label="Remove search">×</button></span>`).join(''):'<span class="historyempty">Your recent searches will appear here.</span>';
+  }
+  function renderSaved() {
+    const list=read(STORAGE.saved); const el=$('savedList');
+    el.innerHTML=list.length?list.map(item=>`<span class="saved"><button data-run="${safeText(item)}">${safeText(item)}</button><button data-remove-saved="${safeText(item)}" aria-label="Remove saved search">×</button></span>`).join(''):'<span class="historyempty">No saved searches yet.</span>';
+  }
+  $('searchForm').addEventListener('submit',event=>{event.preventDefault();search($('query').value);});
+  $('buildOnly').addEventListener('click',()=>{const q=buildQuery();if(q===null)return;$('preview').textContent=q||'Your search query will appear here.';if(q)$('query').value=q;});
+  $('applyAdvanced').addEventListener('click',()=>{const q=buildQuery();if(q===null)return;search(q);});
+  $('clearAdvanced').addEventListener('click',()=>{['exact','exclude','site','after','before'].forEach(id=>$(id).value='');$('filetype').value='';$('language').value='';$('safe').value='moderate';$('preview').textContent='Your search query will appear here.';toast('Advanced filters cleared.');});
+  $('saveCurrent').addEventListener('click',()=>{const q=(currentQuery||$('query').value).trim();if(!q){toast('Enter or run a query before saving.');return;}const list=read(STORAGE.saved);if(list.includes(q)){toast('That search is already saved.');return;}list.unshift(q);write(STORAGE.saved,list.slice(0,20));renderSaved();toast('Search saved.');});
+  $('clearHistory').addEventListener('click',()=>{write(STORAGE.history,[]);renderHistory();toast('Recent searches cleared.');});
+  document.addEventListener('click',event=>{
+    const run=event.target.closest('[data-run]'); if(run){search(run.getAttribute('data-run'));return;}
+    const removeSaved=event.target.closest('[data-remove-saved]');if(removeSaved){const q=removeSaved.getAttribute('data-remove-saved');write(STORAGE.saved,read(STORAGE.saved).filter(x=>x!==q));renderSaved();return;}
+    const removeHistory=event.target.closest('[data-remove-history]');if(removeHistory){const q=removeHistory.getAttribute('data-remove-history');write(STORAGE.history,read(STORAGE.history).filter(x=>x.query!==q));renderHistory();}
+  });
+  $('themeBtn').addEventListener('click',()=>{document.body.classList.toggle('light');try{localStorage.setItem(STORAGE.theme,document.body.classList.contains('light')?'light':'dark');}catch{}});
+  document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();$('query').focus();$('query').select();}if(event.key==='Escape'&&document.activeElement===$('query'))$('query').blur();});
+  try{if(localStorage.getItem(STORAGE.theme)==='light')document.body.classList.add('light');}catch{}
+  renderHistory();renderSaved();
+})();
+</script>
+</body>
+</html>
